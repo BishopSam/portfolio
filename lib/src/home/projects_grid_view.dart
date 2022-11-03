@@ -3,6 +3,7 @@ import 'package:portfolio_app/src/common_widgets/project_card.dart';
 import 'package:portfolio_app/src/common_widgets/responsive_widget.dart';
 import 'package:portfolio_app/src/constants/app_sizes.dart';
 import 'package:portfolio_app/src/constants/projects_list.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyProjects extends StatelessWidget {
   const MyProjects({
@@ -54,6 +55,16 @@ class ProjectsGridView extends StatelessWidget {
   final int crossAxisCount;
   final double childAspectRatio;
 
+  _launchURL(String? url) async {
+    if (url != null) {
+      if (await canLaunchUrl(Uri.parse(url))) {
+        await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+      } else {
+        throw 'Could not launch $url';
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -68,6 +79,7 @@ class ProjectsGridView extends StatelessWidget {
       ),
       itemBuilder: (context, index) => ProjectCard(
         project: kTestProjects[index],
+        onPressed: () => _launchURL(kTestProjects[index].url),
       ),
     );
   }

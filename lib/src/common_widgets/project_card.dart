@@ -9,9 +9,11 @@ class ProjectCard extends StatelessWidget {
   const ProjectCard({
     Key? key,
     required this.project,
+    required this.onPressed
   }) : super(key: key);
 
   final Project project;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +39,7 @@ class ProjectCard extends StatelessWidget {
           ),
           const Spacer(),
           TextButton(
-            onPressed: () {
-              showNotImplementedAlertDialog(context: context);
-            },
+              onPressed: onPressed,
             child: const Text(
               "Go To Project >>",
               style: TextStyle(color: primaryColor),

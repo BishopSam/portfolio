@@ -7,11 +7,22 @@ import 'package:portfolio_app/src/home/widgets/languages.dart';
 import 'package:portfolio_app/src/home/widgets/my_skills.dart';
 import 'package:portfolio_app/src/home/widgets/personal_info.dart';
 import 'package:portfolio_app/src/home/widgets/soft_skills.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
     Key? key,
   }) : super(key: key);
+
+  _launchURL(String? url) async {
+    if (url != null) {
+      if (await canLaunchUrl(Uri.parse(url))) {
+        await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+      } else {
+        throw 'Could not launch $url';
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,20 +93,21 @@ class SideMenu extends StatelessWidget {
                             const Spacer(),
                             IconButton(
                               onPressed: () {
-                                showNotImplementedAlertDialog(context: context);
+                                _launchURL(
+                                    'https://linkedin.com/in/bishopuzochukwu');
                               },
                               icon:
                                   SvgPicture.asset("assets/icons/linkedin.svg"),
                             ),
                             IconButton(
                               onPressed: () {
-                                showNotImplementedAlertDialog(context: context);
+                                _launchURL('https://github.com/BishopSam');
                               },
                               icon: SvgPicture.asset("assets/icons/github.svg"),
                             ),
                             IconButton(
                               onPressed: () {
-                                showNotImplementedAlertDialog(context: context);
+                                _launchURL('https://twitter.com/bishop_ze');
                               },
                               icon:
                                   SvgPicture.asset("assets/icons/twitter.svg"),
