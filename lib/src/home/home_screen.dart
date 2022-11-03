@@ -17,11 +17,11 @@ class HomeScreen extends StatelessWidget {
       children: const [
         HomeBanner(),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.0),
+          padding: EdgeInsets.symmetric(horizontal: 17.0),
           child: MyProjects(),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.0),
+          padding: EdgeInsets.symmetric(horizontal: 17.0),
           child: Recommendations(),
         ),
         gapH12

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:portfolio_app/src/common_widgets/alert_dialogs.dart';
 import 'package:portfolio_app/src/constants/app_sizes.dart';
 import 'package:portfolio_app/src/home/widgets/bio_text.dart';
 import 'package:portfolio_app/src/home/widgets/languages.dart';
@@ -52,7 +53,9 @@ class SideMenu extends StatelessWidget {
                       const Divider(),
                       gapH12,
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          showNotImplementedAlertDialog(context: context);
+                        },
                         child: FittedBox(
                           child: Row(
                             children: [
@@ -78,16 +81,22 @@ class SideMenu extends StatelessWidget {
                           children: [
                             const Spacer(),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                showNotImplementedAlertDialog(context: context);
+                              },
                               icon:
                                   SvgPicture.asset("assets/icons/linkedin.svg"),
                             ),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                showNotImplementedAlertDialog(context: context);
+                              },
                               icon: SvgPicture.asset("assets/icons/github.svg"),
                             ),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                showNotImplementedAlertDialog(context: context);
+                              },
                               icon:
                                   SvgPicture.asset("assets/icons/twitter.svg"),
                             ),

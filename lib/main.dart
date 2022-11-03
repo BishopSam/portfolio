@@ -35,8 +35,10 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Bishop\'s PortFolio',
             debugShowCheckedModeBanner: false,
+            
             theme: ThemeData.light().copyWith(
               primaryColor: primaryColor,
+              
               scaffoldBackgroundColor: Colors.white,
               canvasColor: Colors.grey[100],
               appBarTheme: const AppBarTheme(

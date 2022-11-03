@@ -24,7 +24,7 @@ class BioText extends StatelessWidget {
                 .subtitle2!
                 .copyWith(fontWeight: FontWeight.w500),
           ),
-          gapW20,
+          gapW16,
           Expanded(
               child: Text(
             text!,
