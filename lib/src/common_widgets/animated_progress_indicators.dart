@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_app/src/constants/app_colors.dart';
 import 'package:portfolio_app/src/constants/app_sizes.dart';
 
-
 class AnimatedCircularProgressIndicator extends StatelessWidget {
   const AnimatedCircularProgressIndicator({
     Key? key,
@@ -76,7 +75,10 @@ class AnimatedLinearProgressIndicator extends StatelessWidget {
               children: [
                 Text(
                   label,
-                  style: const TextStyle(color: Colors.white),
+                  style: Theme.of(context)
+                      .textTheme
+                      .subtitle2!
+                      .copyWith(fontWeight: FontWeight.w400),
                 ),
                 Text("${(value * 100).toInt()}%"),
               ],

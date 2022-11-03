@@ -19,7 +19,10 @@ class BioText extends StatelessWidget {
         children: [
           Text(
             title!,
-            style: const TextStyle(color: Colors.white),
+            style: Theme.of(context)
+                .textTheme
+                .subtitle2!
+                .copyWith(fontWeight: FontWeight.w500),
           ),
           gapW20,
           Expanded(

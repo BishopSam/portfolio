@@ -20,7 +20,7 @@ class HomeBanner extends StatelessWidget {
             "assets/images/bg.jpeg",
             fit: BoxFit.cover,
           ),
-          Container(color: darkColor.withOpacity(0.66)),
+          Container(color: Theme.of(context).canvasColor.withOpacity(0.66)),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: Sizes.p20),
             child: Column(
@@ -30,14 +30,14 @@ class HomeBanner extends StatelessWidget {
                 Text(
                   "Hi there 👋 \nWelcome!",
                   style: Responsive.isDesktop(context)
-                      ? Theme.of(context).textTheme.headline3!.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          )
-                      : Theme.of(context).textTheme.headline5!.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                      ? Theme.of(context)
+                          .textTheme
+                          .subtitle1!
+                          .copyWith(fontWeight: FontWeight.bold, fontSize: 48)
+                      : Theme.of(context)
+                          .textTheme
+                          .subtitle1!
+                          .copyWith(fontWeight: FontWeight.bold, fontSize: 25),
                 ),
                 if (Responsive.isMobileLarge(context)) gapH12,
                 const MyBuildAnimatedText(),
@@ -86,18 +86,23 @@ class AnimatedText extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedTextKit(
       animatedTexts: [
-        TyperAnimatedText(
-          "🌱 I'm currently learning flutter ",
-          speed: const Duration(milliseconds: 60),
-        ),
-        TyperAnimatedText(
-          "👯 I’m looking to collaborate on flutter projects ",
-          speed: const Duration(milliseconds: 60),
-        ),
-        TyperAnimatedText(
-          "⚡ Fun fact: Wikipedia is downloadable. ",
-          speed: const Duration(milliseconds: 60),
-        ),
+        TyperAnimatedText("🌱 I'm currently learning flutter ",
+            speed: const Duration(milliseconds: 60),
+            textStyle: const TextStyle(
+              fontSize: 13,
+            )),
+        TyperAnimatedText("👯 I’m looking to collaborate on flutter projects ",
+            speed: const Duration(milliseconds: 60),
+            textStyle: Responsive.isMobile(context)
+                ? const TextStyle(
+                    fontSize: 13,
+                  )
+                : null),
+        TyperAnimatedText("⚡ Fun fact: Wikipedia is downloadable. ",
+            speed: const Duration(milliseconds: 60),
+            textStyle: const TextStyle(
+              fontSize: 13,
+            )),
       ],
     );
   }
