@@ -20,7 +20,7 @@ class HomeBanner extends StatelessWidget {
             "assets/images/bg.jpeg",
             fit: BoxFit.cover,
           ),
-          Container(color: Theme.of(context).canvasColor.withOpacity(0.66)),
+          Container(color: bgColor.withOpacity(0.66)),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: Sizes.p20),
             child: Column(
@@ -30,14 +30,14 @@ class HomeBanner extends StatelessWidget {
                 Text(
                   "Hi there 👋 \nWelcome!",
                   style: Responsive.isDesktop(context)
-                      ? Theme.of(context)
-                          .textTheme
-                          .subtitle1!
-                          .copyWith(fontWeight: FontWeight.bold, fontSize: 48)
-                      : Theme.of(context)
-                          .textTheme
-                          .subtitle1!
-                          .copyWith(fontWeight: FontWeight.bold, fontSize: 25),
+                      ? Theme.of(context).textTheme.subtitle1!.copyWith(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 48,
+                          color: Colors.white)
+                      : Theme.of(context).textTheme.subtitle1!.copyWith(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                          color: Colors.white),
                 ),
                 if (Responsive.isMobileLarge(context)) gapH12,
                 const MyBuildAnimatedText(),
@@ -88,21 +88,13 @@ class AnimatedText extends StatelessWidget {
       animatedTexts: [
         TyperAnimatedText("🌱 I'm currently learning flutter ",
             speed: const Duration(milliseconds: 60),
-            textStyle: const TextStyle(
-              fontSize: 13,
-            )),
+            textStyle: const TextStyle(fontSize: 13, color: Colors.white)),
         TyperAnimatedText("👯 I’m looking to collaborate on flutter projects ",
             speed: const Duration(milliseconds: 60),
-            textStyle: Responsive.isMobile(context)
-                ? const TextStyle(
-                    fontSize: 13,
-                  )
-                : null),
+            textStyle: const TextStyle(fontSize: 13, color: Colors.white)),
         TyperAnimatedText("⚡ Fun fact: Wikipedia is downloadable. ",
             speed: const Duration(milliseconds: 60),
-            textStyle: const TextStyle(
-              fontSize: 13,
-            )),
+            textStyle: const TextStyle(fontSize: 13, color: Colors.white)),
       ],
     );
   }
@@ -118,12 +110,13 @@ class FlutterCodedText extends StatelessWidget {
     return const Text.rich(
       TextSpan(
         text: "<",
+        style: TextStyle(color: Colors.white),
         children: [
           TextSpan(
             text: "flutter",
             style: TextStyle(color: primaryColor),
           ),
-          TextSpan(text: ">"),
+          TextSpan(text: ">", style: TextStyle(color: Colors.white)),
         ],
       ),
     );

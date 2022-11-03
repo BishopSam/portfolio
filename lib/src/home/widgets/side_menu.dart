@@ -15,6 +15,7 @@ class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       child: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -42,7 +43,7 @@ class SideMenu extends StatelessWidget {
                       ),
                       const BioText(
                         title: "Email",
-                        text: "bishopuzichukwu37@gmail.com",
+                        text: "bishopuzochukwu37@gmail.com",
                       ),
                       const Skills(),
                       gapH20,

@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData.light().copyWith(
               primaryColor: primaryColor,
               scaffoldBackgroundColor: Colors.white,
-              canvasColor: Colors.white,
+              canvasColor: Colors.grey[100],
               appBarTheme: const AppBarTheme(
                   color: Colors.transparent,
                   elevation: 0,
@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
             darkTheme: ThemeData.dark().copyWith(
               primaryColor: primaryColor,
               scaffoldBackgroundColor: bgColor,
-              canvasColor: bgColor,
+              canvasColor: secondaryColor,
               appBarTheme: const AppBarTheme(
                   color: Colors.transparent,
                   elevation: 0,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/src/constants/app_sizes.dart';
 import 'package:portfolio_app/src/constants/breakpoints.dart';
 import 'package:portfolio_app/src/home/widgets/side_menu.dart';
 import 'package:portfolio_app/src/theme/theme_controller.dart';
@@ -59,7 +58,6 @@ class MainScreen extends StatelessWidget {
                     activeFgColor: Colors.white,
                     inactiveBgColor: Colors.grey[300],
                     inactiveFgColor: Colors.white,
-                    // animate must be set to true when using custom curve
                     onToggle: (index) {
                       themeController.updateThemeMode(ThemeMode.values[index!]);
                     },
@@ -79,13 +77,14 @@ class MainScreen extends StatelessWidget {
                   flex: 2,
                   child: SideMenu(),
                 ),
-              const SizedBox(width: Sizes.p20),
               Expanded(
                 flex: 7,
                 child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
                   child: Stack(
                     children: [
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           ...children,
                           // our footer
