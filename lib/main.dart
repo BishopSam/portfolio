@@ -15,11 +15,7 @@ void main() async {
   //* This prevents a sudden theme change when the app is first displayed.
   await themeController.loadSettings();
 
-  //* Run the app and pass in the ThemeController. The app listens to the
-  //* SettingsController for changes, then passes it further down to the
-  //* SettingsView.
-
-  //* Entry point of the app
+  //* Run the app and pass in the ThemeController.
   runApp(MyApp(
     themeController: themeController,
   ));

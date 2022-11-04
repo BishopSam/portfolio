@@ -28,7 +28,7 @@ class ProjectCard extends StatelessWidget {
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style:
-                Theme.of(context).textTheme.subtitle1!.copyWith(fontSize: 20),
+                Theme.of(context).textTheme.subtitle1!.copyWith(fontSize:Responsive.isMobileLarge(context) ? 20 : 17),
           ),
           const Spacer(),
           Text(
@@ -45,6 +45,7 @@ class ProjectCard extends StatelessWidget {
               style: TextStyle(color: primaryColor),
             ),
           ),
+          const Spacer(flex: 2,)
         ],
       ),
     );
