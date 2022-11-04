@@ -100,3 +100,5 @@ b. Portrait
 App Demo
 ========
 [Here](https://appetize.io/app/vlirlox4w7nxynxlw43mddurbi?device=pixel4&osVersion=11.0&scale=75) is a link to the hosted app on appetize.io
+
+#### NB: The dark theme button may not work because the emulators on appetize.io have disable dark theme forever, so kindly go to the phones settings, search dark theme and activate it, come back to the app and then the toggle switch would begin working 👍 
