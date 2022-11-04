@@ -99,4 +99,4 @@ b. Portrait
 
 App Demo
 ========
-Here is a link to the hosted app on appetize.io
+[Here](https://appetize.io/app/vlirlox4w7nxynxlw43mddurbi?device=pixel4&osVersion=11.0&scale=75) is a link to the hosted app on appetize.io
