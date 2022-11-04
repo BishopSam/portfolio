@@ -23,7 +23,7 @@ class SoftSkills extends StatelessWidget {
         const SoftSkillsText(text: "Riverpod"),
         const SoftSkillsText(text: "Provider"),
         const SoftSkillsText(text: "MVVM Architecture"),
-        const SoftSkillsText(text: "GIT Knowledge"),
+        const SoftSkillsText(text: "Organization"),
         const SoftSkillsText(text: "Time Management"),
       ],
     );

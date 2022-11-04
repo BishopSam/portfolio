@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio_app/src/common_widgets/alert_dialogs.dart';
 import 'package:portfolio_app/src/constants/app_sizes.dart';
-import 'package:portfolio_app/src/home/widgets/bio_text.dart';
-import 'package:portfolio_app/src/home/widgets/languages.dart';
-import 'package:portfolio_app/src/home/widgets/my_skills.dart';
-import 'package:portfolio_app/src/home/widgets/personal_info.dart';
-import 'package:portfolio_app/src/home/widgets/soft_skills.dart';
+import 'package:portfolio_app/src/home/side_menu/widgets/bio_text.dart';
+import 'package:portfolio_app/src/home/side_menu/widgets/languages.dart';
+import 'package:portfolio_app/src/home/side_menu/widgets/my_skills.dart';
+import 'package:portfolio_app/src/home/side_menu/widgets/personal_info.dart';
+import 'package:portfolio_app/src/home/side_menu/widgets/soft_skills.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SideMenu extends StatelessWidget {
@@ -14,18 +14,26 @@ class SideMenu extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  _launchURL(String? url) async {
-    if (url != null) {
-      if (await canLaunchUrl(Uri.parse(url))) {
-        await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
-      } else {
-        throw 'Could not launch $url';
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
+
+    //? move to controller class in the future when using riverpod for state management
+    void launchURL(String? url) async {
+      if (url != null) {
+        try {
+          if (await canLaunchUrl(Uri.parse(url))) {
+            await launchUrl(Uri.parse(url),
+                mode: LaunchMode.externalApplication);
+          } else {
+            throw 'Could not launch $url';
+          }
+        } catch (e) {
+          showExceptionAlertDialog(
+              context: context, title: 'Error', exception: e);
+        }
+      }
+    }
+
     return Drawer(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       child: SafeArea(
@@ -93,7 +101,7 @@ class SideMenu extends StatelessWidget {
                             const Spacer(),
                             IconButton(
                               onPressed: () {
-                                _launchURL(
+                                launchURL(
                                     'https://linkedin.com/in/bishopuzochukwu');
                               },
                               icon:
@@ -101,13 +109,13 @@ class SideMenu extends StatelessWidget {
                             ),
                             IconButton(
                               onPressed: () {
-                                _launchURL('https://github.com/BishopSam');
+                                launchURL('https://github.com/BishopSam');
                               },
                               icon: SvgPicture.asset("assets/icons/github.svg"),
                             ),
                             IconButton(
                               onPressed: () {
-                                _launchURL('https://twitter.com/bishop_ze');
+                                launchURL('https://twitter.com/bishop_ze');
                               },
                               icon:
                                   SvgPicture.asset("assets/icons/twitter.svg"),

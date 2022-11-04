@@ -59,6 +59,19 @@ Future<bool?> showAlertDialog({
   );
 }
 
+Future<void> showExceptionAlertDialog({
+  required BuildContext context,
+  required String title,
+  required dynamic exception,
+}) =>
+    showAlertDialog(
+      context: context,
+      title: title,
+      content: exception.toString(),
+      defaultActionText: 'OK',
+    );
+
+
 Future<void> showNotImplementedAlertDialog({required BuildContext context}) =>
     showAlertDialog(
       context: context,

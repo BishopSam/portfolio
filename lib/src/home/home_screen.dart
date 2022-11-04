@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/src/constants/app_sizes.dart';
-import 'package:portfolio_app/src/home/home_header.dart';
-import 'package:portfolio_app/src/home/projects_grid_view.dart';
-import 'package:portfolio_app/src/home/recommendations.dart';
+import 'package:portfolio_app/src/home/widgets/home_header.dart';
+import 'package:portfolio_app/src/home/widgets/projects_grid_view.dart';
+import 'package:portfolio_app/src/home/widgets/recommendations.dart';
 import 'package:portfolio_app/src/home/responsive_main_screen.dart';
 import 'package:portfolio_app/src/theme/theme_controller.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/src/constants/breakpoints.dart';
-import 'package:portfolio_app/src/home/widgets/side_menu.dart';
+import 'package:portfolio_app/src/home/side_menu/side_menu.dart';
 import 'package:portfolio_app/src/theme/theme_controller.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
@@ -28,7 +28,6 @@ class MainScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      //TODO: add button for toggling theme mode
       appBar: screenWidth >= Breakpoint.tablet
           ? null
           : AppBar(

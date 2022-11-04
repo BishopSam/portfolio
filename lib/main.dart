@@ -7,18 +7,19 @@ import 'package:portfolio_app/src/theme/theme_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Set up the SettingsController, which will glue user settings to multiple
-  // Flutter Widgets.
+  //* Set up the ThemeController, which will glue user settings to multiple
+  //* Flutter Widgets.
   final themeController = ThemeController(ThemeService());
 
-  // Load the user's preferred theme while the splash screen is displayed.
-  // This prevents a sudden theme change when the app is first displayed.
+  //* Load the user's preferred theme while the splash screen is displayed.
+  //* This prevents a sudden theme change when the app is first displayed.
   await themeController.loadSettings();
 
-  // Run the app and pass in the SettingsController. The app listens to the
-  // SettingsController for changes, then passes it further down to the
-  // SettingsView.
+  //* Run the app and pass in the ThemeController. The app listens to the
+  //* SettingsController for changes, then passes it further down to the
+  //* SettingsView.
 
+  //* Entry point of the app
   runApp(MyApp(
     themeController: themeController,
   ));
@@ -36,10 +37,8 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Bishop\'s PortFolio',
             debugShowCheckedModeBanner: false,
-            
             theme: ThemeData.light().copyWith(
               primaryColor: primaryColor,
-              
               scaffoldBackgroundColor: Colors.white,
               canvasColor: Colors.grey[100],
               appBarTheme: const AppBarTheme(

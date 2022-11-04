@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/src/common_widgets/alert_dialogs.dart';
 import 'package:portfolio_app/src/common_widgets/project_card.dart';
 import 'package:portfolio_app/src/common_widgets/responsive_widget.dart';
 import 'package:portfolio_app/src/constants/app_sizes.dart';
@@ -55,18 +56,27 @@ class ProjectsGridView extends StatelessWidget {
   final int crossAxisCount;
   final double childAspectRatio;
 
-  _launchURL(String? url) async {
-    if (url != null) {
-      if (await canLaunchUrl(Uri.parse(url))) {
-        await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
-      } else {
-        throw 'Could not launch $url';
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
+
+    
+    //? move to controller class in the future when using riverpod for state management
+    void launchURL(String? url) async {
+      if (url != null) {
+        try {
+          if (await canLaunchUrl(Uri.parse(url))) {
+            await launchUrl(Uri.parse(url),
+                mode: LaunchMode.externalApplication);
+          } else {
+            throw 'Could not launch $url';
+          }
+        } catch (e) {
+          showExceptionAlertDialog(
+              context: context, title: 'Error', exception: e);
+        }
+      }
+    }
+
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -79,7 +89,7 @@ class ProjectsGridView extends StatelessWidget {
       ),
       itemBuilder: (context, index) => ProjectCard(
         project: kTestProjects[index],
-        onPressed: () => _launchURL(kTestProjects[index].url),
+        onPressed: () => launchURL(kTestProjects[index].url),
       ),
     );
   }
