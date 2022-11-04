@@ -61,6 +61,7 @@ Due to time constraints, I have decided to slot these features for the v2 of thi
 | Feature | Description |
 | ------- | ------- |
 | In-App Browser Launching | This feature will insure that all links launch in the app |
+| Web hosting | I intend to host this on the web so it'd serve as my portfolio website |
 | Download CV | This will activate the `download_cv` button and esnure my cv is downloaded|
 | Localizations | This feature will ensure that my portfolio can be loaded in various locals, thus changing the language when necessary |
 | State Management | Depending on how complex the above features might become, i might add riverpod to handle the app's state |
@@ -101,4 +102,4 @@ App Demo
 ========
 [Here](https://appetize.io/app/vlirlox4w7nxynxlw43mddurbi?device=pixel4&osVersion=11.0&scale=75) is a link to the hosted app on appetize.io
 
-#### NB: The dark theme button may not work because the emulators on appetize.io have disable dark theme forever, so kindly go to the phones settings, search dark theme and activate it, come back to the app and then the toggle switch would begin working 👍 
+#### NB: The dark theme button may not work because the emulators on appetize.io have disabled dark theme forever, so kindly go to the phones settings, search dark theme and activate it, come back to the app and then the toggle switch would begin working 👍 
