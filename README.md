@@ -102,6 +102,6 @@ App Demo
 ========
 [Here](https://appetize.io/app/2fwi45w2xbull4bscwt3vsv3ru?device=pixel4&osVersion=11.0&scale=75) is a link to the hosted app on appetize.io
 
-[Here](https://drive.google.com/file/d/1fE5Pr3o0QhGTWWG8Zr4zRrnSuIDl0q6O/view?usp=drivesdk) is a link to the downloadable apk file
+[Here](https://drive.google.com/file/d/1fRXLriO8ugMf7NokjXNd1UJu3GA7F27Q/view?usp=drivesdk) is a link to the downloadable apk file
 
 #### NB: The dark theme button may not work because the emulators on appetize.io have disabled dark theme forever, so kindly go to the phones settings, search dark theme and activate it, come back to the app and then the toggle switch would begin working 👍 
