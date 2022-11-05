@@ -8,7 +8,7 @@ List<Project> kTestProjects = [
         "An app that displays various tourist destinations, you can like and save various destinations and book visiting times to these destinations, you will also get notification alerts when the time to visit is approaching.",
   ),
   Project(
-    title: "Corona-Virus Tracking Application",
+    title: "COVID Tracking App",
     url: "https://github.com/BishopSam/coronavirus_rest_api",
     description:
         "An app that gets the number of cases, suspected cases, confirmed cases , deaths and recoveries from a RESTApi. ",
