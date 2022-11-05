@@ -100,7 +100,7 @@ b. Portrait
 
 App Demo
 ========
-[Here](https://appetize.io/app/vlirlox4w7nxynxlw43mddurbi?device=pixel4&osVersion=11.0&scale=75) is a link to the hosted app on appetize.io
+[Here](https://appetize.io/app/2fwi45w2xbull4bscwt3vsv3ru?device=pixel4&osVersion=11.0&scale=75) is a link to the hosted app on appetize.io
 
 [Here](https://drive.google.com/file/d/1fE5Pr3o0QhGTWWG8Zr4zRrnSuIDl0q6O/view?usp=drivesdk) is a link to the downloadable apk file
 
