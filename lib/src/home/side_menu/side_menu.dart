@@ -16,7 +16,6 @@ class SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     //? move to controller class in the future when using riverpod for state management
     void launchURL(String? url) async {
       if (url != null) {
@@ -45,7 +44,7 @@ class SideMenu extends StatelessWidget {
               Flexible(
                 fit: FlexFit.loose,
                 child: Padding(
-                  padding: const EdgeInsets.all(Sizes.p20),
+                  padding: const EdgeInsets.all(Sizes.p12),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -56,10 +55,6 @@ class SideMenu extends StatelessWidget {
                       const BioText(
                         title: "City",
                         text: "Owerri/Abuja",
-                      ),
-                      const BioText(
-                        title: "Slack",
-                        text: "Bishopeze",
                       ),
                       const BioText(
                         title: "Email",
@@ -73,7 +68,8 @@ class SideMenu extends StatelessWidget {
                       gapH12,
                       TextButton(
                         onPressed: () {
-                          showNotImplementedAlertDialog(context: context);
+                          launchURL(
+                              "https://drive.google.com/file/d/12LvHHWvgXjkrSa1zBtW-yRohA7F-e01P/view?usp=sharing");
                         },
                         child: FittedBox(
                           child: Row(

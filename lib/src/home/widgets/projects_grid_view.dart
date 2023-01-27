@@ -23,7 +23,7 @@ class MyProjects extends StatelessWidget {
         ),
         gapH12,
         Text(
-          "I am a mobile app developer with just over a year experience building with flutter; 6 months of that, doing it professionally, in a corporate environment. \nI'm currently looking for the next opportunity to strengthen my skills and gain valuable career experience.",
+          "I am a skilled mobile engineer with expertise in Flutter development, strong understanding of app architecture, proficient in Dart, experienced with integrating APIs and services, and well-versed in Agile methodologies.",
           style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 15),
         ),
         gapH20,
