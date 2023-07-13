@@ -49,14 +49,6 @@ class SideMenu extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       const BioText(
-                        title: "Residence",
-                        text: "Nigeria",
-                      ),
-                      const BioText(
-                        title: "City",
-                        text: "Owerri/Abuja",
-                      ),
-                      const BioText(
                         title: "Email",
                         text: "bishopuzochukwu37@gmail.com",
                       ),
@@ -69,7 +61,7 @@ class SideMenu extends StatelessWidget {
                       TextButton(
                         onPressed: () {
                           launchURL(
-                              "https://drive.google.com/file/d/12LvHHWvgXjkrSa1zBtW-yRohA7F-e01P/view?usp=sharing");
+                              "https://drive.google.com/file/d/1eHIvX6K4bw1pXDQidHDYDZ8ZohSxtTVJ/view?usp=sharing");
                         },
                         child: FittedBox(
                           child: Row(
@@ -116,6 +108,15 @@ class SideMenu extends StatelessWidget {
                               icon:
                                   SvgPicture.asset("assets/icons/twitter.svg"),
                             ),
+                            IconButton(
+                                onPressed: () {
+                                  launchURL(
+                                      'mailto:bishopuzochukwu37@gmail.com');
+                                },
+                                icon: Icon(
+                                  Icons.email,
+                                  color: Colors.grey[600],
+                                )),
                             const Spacer(),
                           ],
                         ),

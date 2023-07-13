@@ -17,7 +17,7 @@ class Recommendations extends StatelessWidget {
         children: [
           Text(
             "Recommendations",
-             style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 34),
+             style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 28),
           ),
          gapH20,
           SingleChildScrollView(

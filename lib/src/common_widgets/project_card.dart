@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/src/common_widgets/alert_dialogs.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio_app/src/common_widgets/responsive_widget.dart';
-import 'package:portfolio_app/src/constants/app_colors.dart';
 import 'package:portfolio_app/src/constants/app_sizes.dart';
 import 'package:portfolio_app/src/models/project.dart';
 
 class ProjectCard extends StatelessWidget {
-  const ProjectCard({
-    Key? key,
-    required this.project,
-    required this.onPressed
-  }) : super(key: key);
+  const ProjectCard({Key? key, required this.project, required this.onPressed})
+      : super(key: key);
 
   final Project project;
   final VoidCallback onPressed;
@@ -23,12 +19,15 @@ class ProjectCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const Spacer(
+            flex: 1,
+          ),
           Text(
             project.title,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style:
-                Theme.of(context).textTheme.subtitle1!.copyWith(fontSize:Responsive.isMobileLarge(context) ? 20 : 17),
+            style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                fontSize: Responsive.isMobileLarge(context) ? 20 : 17),
           ),
           const Spacer(),
           Text(
@@ -38,14 +37,17 @@ class ProjectCard extends StatelessWidget {
             style: const TextStyle(height: 1.4),
           ),
           const Spacer(),
-          TextButton(
-              onPressed: onPressed,
-            child: const Text(
-              "Go To Project >>",
-              style: TextStyle(color: primaryColor),
-            ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: OutlinedButton(
+                onPressed: onPressed,
+                child: SvgPicture.asset(
+                  "assets/icons/github.svg",
+                )),
           ),
-          const Spacer(flex: 2,)
+          const Spacer(
+            flex: 1,
+          )
         ],
       ),
     );

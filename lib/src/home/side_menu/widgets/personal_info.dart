@@ -18,7 +18,7 @@ class PersonalInfo extends StatelessWidget {
               radius: 50,
               backgroundColor: Theme.of(context).canvasColor,
               backgroundImage:
-                  const AssetImage("assets/images/profile.jpg"),
+                  const AssetImage("assets/images/profile_pic2.jpg"),
             ),
             const Spacer(),
             Text(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/src/constants/app_colors.dart';
 import 'package:portfolio_app/src/constants/app_sizes.dart';
 
 class AnimatedCircularProgressIndicator extends StatelessWidget {
@@ -26,8 +25,6 @@ class AnimatedCircularProgressIndicator extends StatelessWidget {
               children: [
                 CircularProgressIndicator(
                   value: value,
-                  color: primaryColor,
-                  backgroundColor: darkColor,
                 ),
                 Center(
                   child: Text(
@@ -86,8 +83,6 @@ class AnimatedLinearProgressIndicator extends StatelessWidget {
             const SizedBox(height: Sizes.p12),
             LinearProgressIndicator(
               value: value,
-              color: primaryColor,
-              backgroundColor: darkColor,
             ),
           ],
         ),

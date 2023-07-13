@@ -11,8 +11,4 @@ final List<Recommendation> kRecommendationsList = [
     text:
         "Bishop is a great asset for any organization. It's a true pleasure working with him at HarshTech. His flutter skill is amazing as well as his professionalism and being a good team player. Bishop's problem solving skill is also one of his great skills.",
   ),
-  Recommendation(
-      name: "Lorem Ipsum",
-      text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet ante velit. Aenean sollicitudin iaculis leo sed tincidunt. Nulla pellentesque ante elit, quis sollicitudin mauris imperdiet id. Integer pellentesque neque tellus, in ornare purus dictum vel. Morbi interdum id massa ut tempor."),
 ];

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio_app/src/common_widgets/alert_dialogs.dart';
+import 'package:portfolio_app/src/common_widgets/live_project_card.dart';
 import 'package:portfolio_app/src/common_widgets/project_card.dart';
 import 'package:portfolio_app/src/common_widgets/responsive_widget.dart';
 import 'package:portfolio_app/src/constants/app_sizes.dart';
@@ -19,7 +21,7 @@ class MyProjects extends StatelessWidget {
         gapH20,
         Text(
           "About Me",
-          style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 34),
+          style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 28),
         ),
         gapH12,
         Text(
@@ -28,8 +30,31 @@ class MyProjects extends StatelessWidget {
         ),
         gapH20,
         Text(
+          "Live Projects",
+          style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 28),
+        ),
+        gapH20,
+        const Responsive(
+            mobile: ProjectsGridView(
+              crossAxisCount: 1,
+              childAspectRatio: 1.7,
+              islive: true,
+            ),
+            mobileLarge: ProjectsGridView(
+              crossAxisCount: 2,
+              islive: true,
+            ),
+            tablet: ProjectsGridView(
+              childAspectRatio: 1.1,
+              islive: true,
+            ),
+            desktop: ProjectsGridView(
+              islive: true,
+            )),
+        gapH20,
+        Text(
           "My Projects",
-          style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 34),
+          style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 28),
         ),
         gapH20,
         const Responsive(
@@ -38,7 +63,9 @@ class MyProjects extends StatelessWidget {
             childAspectRatio: 1.7,
           ),
           mobileLarge: ProjectsGridView(crossAxisCount: 2),
-          tablet: ProjectsGridView(childAspectRatio: 1.1),
+          tablet: ProjectsGridView(
+            childAspectRatio: 1.1,
+          ),
           desktop: ProjectsGridView(),
         )
       ],
@@ -51,15 +78,14 @@ class ProjectsGridView extends StatelessWidget {
     Key? key,
     this.crossAxisCount = 3,
     this.childAspectRatio = 1.3,
+    this.islive = false,
   }) : super(key: key);
 
   final int crossAxisCount;
   final double childAspectRatio;
-
+  final bool islive;
   @override
   Widget build(BuildContext context) {
-
-    
     //? move to controller class in the future when using riverpod for state management
     void launchURL(String? url) async {
       if (url != null) {
@@ -80,17 +106,25 @@ class ProjectsGridView extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: kTestProjects.length,
+      itemCount: islive ? kLiveProjects.length : kTestProjects.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
         childAspectRatio: childAspectRatio,
         crossAxisSpacing: Sizes.p20,
         mainAxisSpacing: Sizes.p20,
       ),
-      itemBuilder: (context, index) => ProjectCard(
-        project: kTestProjects[index],
-        onPressed: () => launchURL(kTestProjects[index].url),
-      ),
+      itemBuilder: (context, index) => islive
+          ? LiveProjectCard(
+              project: kLiveProjects[index],
+              appleStorePressed: () =>
+                  launchURL(kLiveProjects[index].appStoreUrl),
+              playStorePressed: () =>
+                  launchURL(kLiveProjects[index].playStoreUrl),
+            )
+          : ProjectCard(
+              project: kTestProjects[index],
+              onPressed: () => launchURL(kTestProjects[index].url),
+            ),
     );
   }
 }

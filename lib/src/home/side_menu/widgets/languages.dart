@@ -21,7 +21,7 @@ class Languages extends StatelessWidget {
           ),
         ),
         const AnimatedLinearProgressIndicator(
-          percentage: 0.7,
+          percentage: 0.8,
           label: "Dart",
         ),
         const AnimatedLinearProgressIndicator(
@@ -36,7 +36,6 @@ class Languages extends StatelessWidget {
           percentage: 0.75,
           label: "Pidgin",
         ),
-  
       ],
     );
   }
