@@ -101,6 +101,7 @@ b. Portrait
 App Demo
 ========
 [Here](https://appetize.io/app/2fwi45w2xbull4bscwt3vsv3ru?device=pixel4&osVersion=11.0&scale=75) is a link to the hosted app on appetize.io
+[Here](https://bishopeze.netlify.app) is a link to the website version of the app.
 
 [Here](https://drive.google.com/file/d/1fRXLriO8ugMf7NokjXNd1UJu3GA7F27Q/view?usp=drivesdk) is a link to the downloadable apk file
 
